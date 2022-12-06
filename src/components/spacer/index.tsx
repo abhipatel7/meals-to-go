@@ -30,8 +30,14 @@ const getVariant = (position: Props['position'], size: Props['size'], space: str
 const SpacerView = styled.View<SpacerViewProps>`
   ${({ variant }) => variant};
 `;
+
 export const Spacer = ({ position, size, children }: Props) => {
   const { space } = useTheme();
   const variant = getVariant(position, size, space);
   return <SpacerView variant={variant}>{children}</SpacerView>;
+};
+
+Spacer.defaultProps = {
+  position: 'left',
+  size: 'large',
 };
