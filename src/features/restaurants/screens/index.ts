@@ -1,1 +1,1 @@
-export * from './restaurants';
+export * from './screen';
