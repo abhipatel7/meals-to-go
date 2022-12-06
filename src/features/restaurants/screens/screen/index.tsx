@@ -1,8 +1,9 @@
 import React from 'react';
 import { Searchbar } from 'react-native-paper';
+import { Spacer } from '../../../../components';
 
 import { Card as RestaurantCard } from '../../components';
-import { SafeArea, SearchContainer, RestaurantListContainer } from './styles';
+import { SafeArea, SearchContainer, RestaurantList } from './styles';
 
 export const RestaurantsScreen = () => {
   return (
@@ -10,9 +11,15 @@ export const RestaurantsScreen = () => {
       <SearchContainer>
         <Searchbar />
       </SearchContainer>
-      <RestaurantListContainer>
-        <RestaurantCard />
-      </RestaurantListContainer>
+      <RestaurantList
+        data={[{ name: 1 }, { name: 2 }, { name: 3 }, { name: 4 }, { name: 5 }]}
+        renderItem={() => (
+          <Spacer position="bottom" size="large">
+            <RestaurantCard />
+          </Spacer>
+        )}
+        keyExtractor={(item) => item.name.toString()}
+      />
     </SafeArea>
   );
 };

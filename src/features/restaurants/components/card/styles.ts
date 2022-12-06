@@ -13,7 +13,9 @@ export const Address = styled.Text`
 `;
 
 export const RestaurantCard = styled(Card)`
-  background-color: ${({ theme: { colors } }) => colors.bg.primary};
+  ${({ theme: { space, colors } }) => `
+    background-color: ${colors.bg.primary}; ;
+  `}
 `;
 
 export const RestaurantCardCover = styled(Card.Cover)`
