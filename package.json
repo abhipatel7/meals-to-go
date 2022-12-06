@@ -6,7 +6,6 @@
     "start": "expo start",
     "android": "expo start --android",
     "ios": "expo start --ios",
-    "web": "expo start --web",
     "lint": "eslint --ext js,ts,tsx . --cache --report-unused-disable-directives --max-warnings=0",
     "lint:fix": "eslint --ext js,ts,tsx . --cache --report-unused-disable-directives --max-warnings=0 --fix",
     "format": "prettier --write . --config ./.prettierrc",
@@ -24,6 +23,7 @@
     "react-dom": "18.1.0",
     "react-native": "0.70.5",
     "react-native-paper": "^4.12.5",
+    "react-native-svg": "13.4.0",
     "react-native-web": "~0.18.9",
     "styled-components": "^5.3.6"
   },
