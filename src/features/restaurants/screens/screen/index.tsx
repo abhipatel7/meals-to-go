@@ -1,13 +1,13 @@
 import React, { useContext } from 'react';
-import { ActivityIndicator, Colors, Searchbar } from 'react-native-paper';
+import { ActivityIndicator, Colors } from 'react-native-paper';
 
 import { SafeArea, Spacer } from '../../../../components';
-import { RestaurantContextType, RestaurantsContext } from '../../../../services';
-import { Card as RestaurantCard } from '../../components';
-import { SearchContainer, RestaurantList, LoadingContainer } from './styles';
+import { RestaurantsContext } from '../../../../services';
+import { Card as RestaurantCard, Search } from '../../components';
+import { RestaurantList, LoadingContainer } from './styles';
 
 export const RestaurantsScreen = () => {
-  const { restaurants, isLoading } = useContext(RestaurantsContext) as RestaurantContextType;
+  const { restaurants, isLoading } = useContext(RestaurantsContext);
 
   return (
     <SafeArea>
@@ -17,9 +17,7 @@ export const RestaurantsScreen = () => {
         </LoadingContainer>
       ) : (
         <>
-          <SearchContainer>
-            <Searchbar />
-          </SearchContainer>
+          <Search />
           <RestaurantList
             data={restaurants}
             renderItem={({ item }) => (

@@ -21,7 +21,8 @@
     "semi": "off",
     "prefer-promise-reject-errors": "off",
     "react/display-name": "off",
-    "multiline-ternary": "off"
+    "multiline-ternary": "off",
+    "@typescript-eslint/strict-boolean-expressions": "off"
   },
   "settings": {
     "react": {

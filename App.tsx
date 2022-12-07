@@ -12,7 +12,11 @@ import { Ionicons } from '@expo/vector-icons';
 import { RestaurantsScreen } from './src/features';
 import { theme } from './src/infrastructure';
 import { SafeArea } from './src/components';
-import { RestaurantsContextProvider } from './src/services';
+import { LocationContextProvider, RestaurantsContextProvider } from './src/services';
+
+/**
+ * TODO: Add proper types instead of any
+ */
 
 const Tab = createBottomTabNavigator();
 
@@ -63,11 +67,13 @@ const App = () => {
   return (
     <>
       <ThemeProvider theme={theme}>
-        <RestaurantsContextProvider>
-          <NavigationContainer>
-            <Tabs />
-          </NavigationContainer>
-        </RestaurantsContextProvider>
+        <LocationContextProvider>
+          <RestaurantsContextProvider>
+            <NavigationContainer>
+              <Tabs />
+            </NavigationContainer>
+          </RestaurantsContextProvider>
+        </LocationContextProvider>
       </ThemeProvider>
       <ExpoStatusBar style="auto" />
     </>

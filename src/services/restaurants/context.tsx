@@ -1,4 +1,5 @@
-import { useEffect, useState, createContext } from 'react';
+import { useEffect, useState, createContext, useContext } from 'react';
+import { LocationContext } from '../location';
 import { restaurantsRequest, restaurantsTransform } from './service';
 
 export interface RestaurantContextType {
@@ -11,27 +12,43 @@ interface Props {
   children: React.ReactNode;
 }
 
-export const RestaurantsContext = createContext<RestaurantContextType | null>(null);
+export const RestaurantsContext = createContext<RestaurantContextType>({
+  restaurants: [],
+  isLoading: false,
+  error: null,
+});
 
 export const RestaurantsContextProvider = ({ children }: Props) => {
   const [restaurants, setRestaurants] = useState<any[]>([]);
   const [isLoading, setIsLoading] = useState(false);
-  const [error, setError] = useState('');
+  const [error, setError] = useState<any>(null);
+  const { location } = useContext(LocationContext);
 
-  const retrieveRestaurants = () => {
+  const retrieveRestaurants = (loc: any) => {
     setIsLoading(true);
+    setRestaurants([]);
+
     setTimeout(() => {
-      restaurantsRequest()
+      restaurantsRequest(loc)
         .then(restaurantsTransform)
-        .then((restaurants) => setRestaurants(restaurants))
-        .catch((err) => setError(err))
-        .finally(() => setIsLoading(false));
-    }, 1000);
+        .then((results) => {
+          setIsLoading(false);
+          setRestaurants(results);
+        })
+        .catch((err) => {
+          setIsLoading(false);
+          setError(err);
+        });
+    }, 2000);
   };
 
   useEffect(() => {
-    retrieveRestaurants();
-  }, []);
+    if (location) {
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+      const locationString = `${location.lat},${location.lng}`;
+      retrieveRestaurants(locationString);
+    }
+  }, [location]);
 
   return <RestaurantsContext.Provider value={{ restaurants, isLoading, error }}>{children}</RestaurantsContext.Provider>;
 };
