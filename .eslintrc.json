@@ -19,7 +19,9 @@
     "@typescript-eslint/explicit-function-return-type": "off",
     "@typescript-eslint/member-delimiter-style": "off",
     "semi": "off",
-    "react/display-name": "off"
+    "prefer-promise-reject-errors": "off",
+    "react/display-name": "off",
+    "multiline-ternary": "off"
   },
   "settings": {
     "react": {

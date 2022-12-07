@@ -10,8 +10,9 @@ import { NavigationContainer, ParamListBase, RouteProp } from '@react-navigation
 import { Ionicons } from '@expo/vector-icons';
 
 import { RestaurantsScreen } from './src/features';
-import { theme } from './src/infrastructure/theme';
+import { theme } from './src/infrastructure';
 import { SafeArea } from './src/components';
+import { RestaurantsContextProvider } from './src/services';
 
 const Tab = createBottomTabNavigator();
 
@@ -61,12 +62,14 @@ const App = () => {
 
   return (
     <>
-      <NavigationContainer>
-        <ThemeProvider theme={theme}>
-          <Tabs />
-        </ThemeProvider>
-        <ExpoStatusBar style="auto" />
-      </NavigationContainer>
+      <ThemeProvider theme={theme}>
+        <RestaurantsContextProvider>
+          <NavigationContainer>
+            <Tabs />
+          </NavigationContainer>
+        </RestaurantsContextProvider>
+      </ThemeProvider>
+      <ExpoStatusBar style="auto" />
     </>
   );
 };

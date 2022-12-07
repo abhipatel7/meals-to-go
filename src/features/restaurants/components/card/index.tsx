@@ -1,14 +1,13 @@
 import React from 'react';
 import { SvgXml } from 'react-native-svg';
 
-import { Restaurant } from '../../../../types';
 import Star from '../../../../../assets/icons/star';
 import Open from '../../../../../assets/icons/open';
 import { Spacer, Text } from '../../../../components';
 import { RestaurantCard, RestaurantCardCover, Info, Section, Rating, Icon, Address } from './styles';
 
 interface Props {
-  restaurant?: Restaurant;
+  restaurant?: any;
 }
 
 export const Card = ({
@@ -36,14 +35,18 @@ export const Card = ({
               <SvgXml xml={Star} width={20} height={20} key={index} />
             ))}
           </Rating>
-          <Spacer>
-            {isClosedTemporarily && (
+          {Boolean(isClosedTemporarily) && (
+            <Spacer>
               <Text variant="error" style={{ color: 'red' }}>
                 CLOSED TEMPORARILY
               </Text>
-            )}
-          </Spacer>
-          <Spacer>{isOpenNow && <SvgXml xml={Open} width={20} height={20} />}</Spacer>
+            </Spacer>
+          )}
+          {Boolean(isOpenNow) && (
+            <Spacer>
+              <SvgXml xml={Open} width={20} height={20} />
+            </Spacer>
+          )}
           <Spacer>
             <Icon source={{ uri: icon }} />
           </Spacer>
