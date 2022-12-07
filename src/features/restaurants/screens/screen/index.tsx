@@ -1,9 +1,9 @@
 import React from 'react';
 import { Searchbar } from 'react-native-paper';
-import { Spacer } from '../../../../components';
+import { SafeArea, Spacer } from '../../../../components';
 
 import { Card as RestaurantCard } from '../../components';
-import { SafeArea, SearchContainer, RestaurantList } from './styles';
+import { SearchContainer, RestaurantList } from './styles';
 
 export const RestaurantsScreen = () => {
   return (
