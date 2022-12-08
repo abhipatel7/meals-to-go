@@ -1,5 +1,8 @@
 import { useContext } from "react";
+import { TouchableOpacity } from "react-native";
 import { Colors } from "react-native-paper";
+import { ParamListBase, useNavigation } from "@react-navigation/native";
+import { StackNavigationProp } from "@react-navigation/stack";
 
 import { SafeArea, Spacer } from "../../../../components";
 import { RestaurantsContext } from "../../../../services";
@@ -9,6 +12,7 @@ import { Loading, LoadingContainer, RestaurantList } from "./styles";
 
 export const RestaurantsScreen = () => {
   const { isLoading, restaurants } = useContext(RestaurantsContext);
+  const navigation = useNavigation<StackNavigationProp<ParamListBase>>();
 
   return (
     <SafeArea>
@@ -20,14 +24,16 @@ export const RestaurantsScreen = () => {
       <Search />
       <RestaurantList
         data={restaurants}
-        renderItem={({ item }) => {
+        renderItem={({ item: restaurant }) => {
           return (
-            <Spacer position="bottom" size="large">
-              <RestaurantCard restaurant={item} />
-            </Spacer>
+            <TouchableOpacity onPress={() => navigation.navigate("RestaurantDetail", { restaurant })}>
+              <Spacer position="bottom" size="large">
+                <RestaurantCard restaurant={restaurant} />
+              </Spacer>
+            </TouchableOpacity>
           );
         }}
-        keyExtractor={(item) => item.name}
+        keyExtractor={(restaurant) => restaurant.name}
       />
     </SafeArea>
   );
