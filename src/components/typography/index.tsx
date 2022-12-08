@@ -2,6 +2,7 @@ import styled, { DefaultTheme } from "styled-components/native";
 
 interface Props {
   variant?: "body" | "hint" | "error" | "caption" | "label";
+  center?: boolean;
 }
 
 const defaultTextStyles = ({ fonts, fontWeights, colors }: DefaultTheme) => `
