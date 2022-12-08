@@ -1,9 +1,9 @@
-import React, { useState, createContext } from "react";
+import { createContext, ReactNode, useState } from "react";
 
 import { locationRequest, locationTransform } from "./service";
 
 interface Props {
-  children: React.ReactNode;
+  children: ReactNode;
 }
 
 export interface LocationContextType {
@@ -23,7 +23,7 @@ export const LocationContext = createContext<LocationContextType>({
 });
 
 export const LocationContextProvider = ({ children }: Props) => {
-  const [keyword, setKeyword] = useState("san francisco");
+  const [keyword, setKeyword] = useState("San Francisco");
   const [location, setLocation] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);

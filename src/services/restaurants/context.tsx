@@ -1,5 +1,7 @@
-import { useEffect, useState, createContext, useContext } from "react";
+import { createContext, useContext, useEffect, useState } from "react";
+
 import { LocationContext } from "../location";
+
 import { restaurantsRequest, restaurantsTransform } from "./service";
 
 export interface RestaurantContextType {

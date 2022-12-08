@@ -1,5 +1,6 @@
-import { mockImages, MockLocation, mocks } from "./mock";
 import camelize from "camelize-ts";
+
+import { mockImages, MockLocation, mocks } from "./mock";
 
 export const restaurantsRequest = async (location: MockLocation) => {
   return await new Promise((resolve, reject) => {

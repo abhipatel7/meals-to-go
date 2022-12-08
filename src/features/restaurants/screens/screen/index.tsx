@@ -1,10 +1,11 @@
-import React, { useContext } from "react";
+import { useContext } from "react";
 import { Colors } from "react-native-paper";
 
 import { SafeArea, Spacer } from "../../../../components";
 import { RestaurantsContext } from "../../../../services";
 import { Card as RestaurantCard, Search } from "../../components";
-import { RestaurantList, LoadingContainer, Loading } from "./styles";
+
+import { Loading, LoadingContainer, RestaurantList } from "./styles";
 
 export const RestaurantsScreen = () => {
   const { isLoading, restaurants } = useContext(RestaurantsContext);

@@ -1,17 +1,16 @@
-import { StatusBar as ExpoStatusBar } from "expo-status-bar";
-import React from "react";
-import { ThemeProvider } from "styled-components/native";
-import { useFonts } from "expo-font";
 import { Text } from "react-native";
-import { Oswald_400Regular } from "@expo-google-fonts/oswald";
+import { Ionicons } from "@expo/vector-icons";
 import { Lato_400Regular } from "@expo-google-fonts/lato";
+import { Oswald_400Regular } from "@expo-google-fonts/oswald";
 import { BottomTabNavigationOptions, createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { NavigationContainer, ParamListBase, RouteProp } from "@react-navigation/native";
-import { Ionicons } from "@expo/vector-icons";
+import { useFonts } from "expo-font";
+import { StatusBar as ExpoStatusBar } from "expo-status-bar";
+import { ThemeProvider } from "styled-components/native";
 
+import { SafeArea } from "./src/components";
 import { RestaurantsScreen } from "./src/features";
 import { theme } from "./src/infrastructure";
-import { SafeArea } from "./src/components";
 import { LocationContextProvider, RestaurantsContextProvider } from "./src/services";
 
 /**

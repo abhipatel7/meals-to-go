@@ -1,10 +1,10 @@
-import React from "react";
 import { SvgXml } from "react-native-svg";
 
-import Star from "../../../../../assets/icons/star";
 import Open from "../../../../../assets/icons/open";
+import Star from "../../../../../assets/icons/star";
 import { Spacer, Text } from "../../../../components";
-import { RestaurantCard, RestaurantCardCover, Info, Section, Rating, Icon, Address } from "./styles";
+
+import { Address, Icon, Info, Rating, RestaurantCard, RestaurantCardCover, Section } from "./styles";
 
 interface Props {
   restaurant?: any;
