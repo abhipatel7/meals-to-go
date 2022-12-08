@@ -10,8 +10,8 @@ import { CompactImage, CompactWebview, Item } from "./styles";
 
 const isAndroid = Device.osName === "Android";
 
-export const CompactRestaurantInfo = ({ restaurant }: any) => {
-  const Image: StyledComponent<typeof WebView | typeof RNImage, DefaultTheme> = isAndroid ? CompactWebview : CompactImage;
+export const CompactRestaurantInfo = ({ restaurant, isMap }: any) => {
+  const Image: StyledComponent<typeof WebView | typeof RNImage, DefaultTheme> = isAndroid && isMap ? CompactWebview : CompactImage;
 
   return (
     <Item>

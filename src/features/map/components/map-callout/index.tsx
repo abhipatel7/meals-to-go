@@ -1,3 +1,3 @@
 import { CompactRestaurantInfo } from "../../../../components";
 
-export const MapCallout = ({ restaurant }: any) => <CompactRestaurantInfo restaurant={restaurant} />;
+export const MapCallout = ({ restaurant }: any) => <CompactRestaurantInfo isMap restaurant={restaurant} />;
