@@ -1,7 +1,7 @@
-import styled, { DefaultTheme } from 'styled-components/native';
+import styled, { DefaultTheme } from "styled-components/native";
 
 interface Props {
-  variant?: 'body' | 'hint' | 'error' | 'caption' | 'label';
+  variant?: "body" | "hint" | "error" | "caption" | "label";
 }
 
 const defaultTextStyles = ({ fonts, fontWeights, colors }: DefaultTheme) => `
@@ -46,5 +46,5 @@ const variants = {
 
 export const Text = styled.Text<Props>`
   ${({ theme }) => defaultTextStyles(theme)}
-  ${({ variant = 'body', theme }) => variants[variant](theme)}
+  ${({ variant = "body", theme }) => variants[variant](theme)}
 `;

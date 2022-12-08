@@ -1,7 +1,7 @@
-import React, { useContext, useEffect, useState } from 'react';
-import { Searchbar } from 'react-native-paper';
-import { LocationContext } from '../../../../services';
-import { SearchContainer } from './styles';
+import React, { useContext, useEffect, useState } from "react";
+import { Searchbar } from "react-native-paper";
+import { LocationContext } from "../../../../services";
+import { SearchContainer } from "./styles";
 
 export const Search = () => {
   const { keyword, search } = useContext(LocationContext);
@@ -9,6 +9,7 @@ export const Search = () => {
 
   useEffect(() => {
     search(searchKeyword);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (

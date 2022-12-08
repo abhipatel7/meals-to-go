@@ -1,26 +1,26 @@
-import React from 'react';
-import styled, { useTheme } from 'styled-components/native';
+import React from "react";
+import styled, { useTheme } from "styled-components/native";
 
 interface SpacerViewProps {
   variant: string;
 }
 
 interface Props {
-  position: 'top' | 'left' | 'bottom' | 'right';
-  size: 'small' | 'medium' | 'large';
+  position: "top" | "left" | "bottom" | "right";
+  size: "small" | "medium" | "large";
   children: React.ReactNode;
 }
 
 const sizeVariant = { small: 1, medium: 2, large: 3 };
 
 const positionVariant = {
-  top: 'marginTop',
-  bottom: 'marginBottom',
-  left: 'marginLeft',
-  right: 'marginRight',
+  top: "marginTop",
+  bottom: "marginBottom",
+  left: "marginLeft",
+  right: "marginRight",
 };
 
-const getVariant = (position: Props['position'], size: Props['size'], space: string[]) => {
+const getVariant = (position: Props["position"], size: Props["size"], space: string[]) => {
   const sizeIndex = sizeVariant[size];
   const property = positionVariant[position];
 
@@ -38,6 +38,6 @@ export const Spacer = ({ position, size, children }: Props) => {
 };
 
 Spacer.defaultProps = {
-  position: 'left',
-  size: 'large',
+  position: "left",
+  size: "large",
 };

@@ -1,5 +1,5 @@
-import styled from 'styled-components/native';
-import { Card } from 'react-native-paper';
+import styled from "styled-components/native";
+import { Card } from "react-native-paper";
 
 export const Info = styled.View`
   padding: ${({ theme: { space } }) => space[3]};
@@ -13,7 +13,7 @@ export const Address = styled.Text`
 `;
 
 export const RestaurantCard = styled(Card)`
-  ${({ theme: { space, colors } }) => `
+  ${({ theme: { colors } }) => `
     background-color: ${colors.bg.primary}; ;
   `}
 `;

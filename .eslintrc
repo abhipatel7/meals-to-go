@@ -1,0 +1,10 @@
+{
+  "extends": ["@react-native-community", "eslint-config-prettier"],
+  "rules": {
+    "quotes": [2, "double", { "avoidEscape": true }],
+    "react/react-in-jsx-scope": 0
+  },
+  "env": {
+    "jest": false
+  }
+}

@@ -1,6 +1,6 @@
-import { useEffect, useState, createContext, useContext } from 'react';
-import { LocationContext } from '../location';
-import { restaurantsRequest, restaurantsTransform } from './service';
+import { useEffect, useState, createContext, useContext } from "react";
+import { LocationContext } from "../location";
+import { restaurantsRequest, restaurantsTransform } from "./service";
 
 export interface RestaurantContextType {
   restaurants: any[];
@@ -44,7 +44,6 @@ export const RestaurantsContextProvider = ({ children }: Props) => {
 
   useEffect(() => {
     if (location) {
-      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
       const locationString = `${location.lat},${location.lng}`;
       retrieveRestaurants(locationString);
     }

@@ -1,11 +1,11 @@
-import { mockImages, MockLocation, mocks } from './mock';
-import camelize from 'camelize-ts';
+import { mockImages, MockLocation, mocks } from "./mock";
+import camelize from "camelize-ts";
 
 export const restaurantsRequest = async (location: MockLocation) => {
   return await new Promise((resolve, reject) => {
     const mock = mocks[location];
     if (!mock) {
-      reject('not found');
+      reject("not found");
     }
     resolve(mock);
   });
@@ -17,7 +17,7 @@ export const restaurantsTransform = ({ results = [] }: any) => {
     return {
       ...restaurant,
       address: restaurant.vicinity,
-      isClosedTemporarily: restaurant.business_status === 'CLOSED_TEMPORARILY',
+      isClosedTemporarily: restaurant.business_status === "CLOSED_TEMPORARILY",
       isOpenNow: restaurant.opening_hours?.open_now,
     };
   });

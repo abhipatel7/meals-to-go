@@ -1,4 +1,5 @@
-import styled from 'styled-components/native';
+import { ActivityIndicator } from "react-native-paper";
+import styled from "styled-components/native";
 
 export const RestaurantList = styled.FlatList.attrs({
   contentContainerStyle: {
@@ -6,8 +7,12 @@ export const RestaurantList = styled.FlatList.attrs({
   },
 })``;
 
+export const Loading = styled(ActivityIndicator)`
+  margin-left: -25px;
+`;
+
 export const LoadingContainer = styled.View`
-  flex: 1;
-  justify-content: center;
-  align-items: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
 `;

@@ -1,6 +1,6 @@
-import React, { useState, createContext } from 'react';
+import React, { useState, createContext } from "react";
 
-import { locationRequest, locationTransform } from './service';
+import { locationRequest, locationTransform } from "./service";
 
 interface Props {
   children: React.ReactNode;
@@ -16,14 +16,14 @@ export interface LocationContextType {
 
 export const LocationContext = createContext<LocationContextType>({
   location: {},
-  keyword: '',
+  keyword: "",
   isLoading: false,
   error: null,
-  search: (key: string) => {},
+  search: () => {},
 });
 
 export const LocationContextProvider = ({ children }: Props) => {
-  const [keyword, setKeyword] = useState('san francisco');
+  const [keyword, setKeyword] = useState("san francisco");
   const [location, setLocation] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);

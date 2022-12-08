@@ -1,12 +1,12 @@
-import camelize from 'camelize-ts';
+import camelize from "camelize-ts";
 
-import { LOCATION, locations } from './mock';
+import { LOCATION, locations } from "./mock";
 
 export const locationRequest = async (searchTerm: any) => {
   return await new Promise((resolve, reject) => {
     const locationMock = locations[searchTerm as LOCATION];
     if (locationMock === undefined) {
-      reject('not found');
+      reject("not found");
     }
     resolve(locationMock);
   });
