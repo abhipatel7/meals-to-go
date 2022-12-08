@@ -7,7 +7,7 @@ import { ThemeProvider } from "styled-components/native";
 import "react-native-gesture-handler";
 
 import { Navigation, theme } from "./src/infrastructure";
-import { LocationContextProvider, RestaurantsContextProvider } from "./src/services";
+import { FavoritesContextProvider, LocationContextProvider, RestaurantsContextProvider } from "./src/services";
 
 /**
  * TODO: Add proper types instead of any
@@ -25,11 +25,13 @@ const App = () => {
   return (
     <>
       <ThemeProvider theme={theme}>
-        <LocationContextProvider>
-          <RestaurantsContextProvider>
-            <Navigation />
-          </RestaurantsContextProvider>
-        </LocationContextProvider>
+        <FavoritesContextProvider>
+          <LocationContextProvider>
+            <RestaurantsContextProvider>
+              <Navigation />
+            </RestaurantsContextProvider>
+          </LocationContextProvider>
+        </FavoritesContextProvider>
       </ThemeProvider>
       <ExpoStatusBar style="auto" />
     </>

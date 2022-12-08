@@ -2,7 +2,7 @@ import { SvgXml } from "react-native-svg";
 
 import Open from "../../../../../assets/icons/open";
 import Star from "../../../../../assets/icons/star";
-import { Spacer, Text } from "../../../../components";
+import { Favorite, Spacer, Text } from "../../../../components";
 
 import { Address, Icon, Info, Rating, RestaurantCard, RestaurantCardCover, Section } from "./styles";
 
@@ -10,10 +10,14 @@ interface Props {
   restaurant?: any;
 }
 
-export const Card = ({ restaurant: { name, icon, photos, address, rating, isOpenNow, isClosedTemporarily, placeId } }: Props) => {
+export const Card = ({ restaurant }: Props) => {
+  const { name, icon, photos, address, rating, isOpenNow, isClosedTemporarily, placeId } = restaurant;
+
   const ratingArray = Array.from(new Array(Math.floor(rating)));
+
   return (
     <RestaurantCard elevation={5}>
+      <Favorite restaurant={restaurant} />
       <RestaurantCardCover source={{ uri: photos[0] }} />
       <Info>
         <Text variant="label">{name}</Text>

@@ -12,6 +12,7 @@ import { Loading, LoadingContainer, RestaurantList } from "./styles";
 
 export const RestaurantsScreen = () => {
   const { isLoading, restaurants } = useContext(RestaurantsContext);
+
   const navigation = useNavigation<StackNavigationProp<ParamListBase>>();
 
   return (
