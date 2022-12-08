@@ -3,9 +3,9 @@ import { Ionicons } from "@expo/vector-icons";
 import { BottomTabNavigationOptions, createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { NavigationContainer, ParamListBase, RouteProp } from "@react-navigation/native";
 
-import { SafeArea } from "../../../components";
+import { SafeArea } from "../../components";
 
-import { RestaurantsNavigator } from "./restaurants";
+import { RestaurantsNavigator } from "./restaurants-navigator";
 
 const Tab = createBottomTabNavigator();
 

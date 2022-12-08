@@ -33,7 +33,7 @@ export const RestaurantsScreen = () => {
             </TouchableOpacity>
           );
         }}
-        keyExtractor={(restaurant) => restaurant.name}
+        keyExtractor={(restaurant: any) => restaurant.name}
       />
     </SafeArea>
   );

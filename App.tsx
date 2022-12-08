@@ -11,6 +11,7 @@ import { LocationContextProvider, RestaurantsContextProvider } from "./src/servi
 
 /**
  * TODO: Add proper types instead of any
+ * TODO: Refactor code
  */
 
 const App = () => {
