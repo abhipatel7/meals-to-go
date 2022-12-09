@@ -1,18 +1,24 @@
 import { useContext, useState } from "react";
+import { ActivityIndicator, Colors } from "react-native-paper";
+import { ParamListBase, useNavigation } from "@react-navigation/native";
+import { StackNavigationProp } from "@react-navigation/stack";
 
 import { Spacer, Text } from "../../../../components";
 import { AuthenticationContext } from "../../../../services";
-import { AccountBackground, AccountContainer, AccountCover, AuthButton, AuthInput } from "../../components";
+import { AccountBackground, AccountContainer, AccountCover, AuthButton, AuthInput, ErrorContainer, Title } from "../../components";
 
 export const LoginScreen = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const { onLogin, error } = useContext(AuthenticationContext);
+  const navigation = useNavigation<StackNavigationProp<ParamListBase>>();
+
+  const { onLogin, error, isLoading } = useContext(AuthenticationContext);
 
   return (
     <AccountBackground>
       <AccountCover />
+      <Title>Meals To Go</Title>
       <AccountContainer>
         <AuthInput
           label="E-mail"
@@ -33,16 +39,25 @@ export const LoginScreen = () => {
           />
         </Spacer>
         {error && (
-          <Spacer size="large" position="top">
+          <ErrorContainer>
             <Text variant="error">{error}</Text>
-          </Spacer>
+          </ErrorContainer>
         )}
         <Spacer size="large" position="top">
-          <AuthButton icon="lock-open-outline" mode="contained" onPress={() => onLogin(email, password)}>
-            Login
-          </AuthButton>
+          {!isLoading ? (
+            <AuthButton icon="lock-open-outline" mode="contained" onPress={() => onLogin(email, password)}>
+              Login
+            </AuthButton>
+          ) : (
+            <ActivityIndicator animating={true} color={Colors.blue300} />
+          )}
         </Spacer>
       </AccountContainer>
+      <Spacer size="large" position="top">
+        <AuthButton mode="contained" onPress={() => navigation.goBack()}>
+          Back
+        </AuthButton>
+      </Spacer>
     </AccountBackground>
   );
 };

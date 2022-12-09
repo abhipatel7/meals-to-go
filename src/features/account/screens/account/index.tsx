@@ -2,7 +2,7 @@ import { ParamListBase, useNavigation } from "@react-navigation/native";
 import { StackNavigationProp } from "@react-navigation/stack";
 
 import { Spacer } from "../../../../components";
-import { AccountBackground, AccountContainer, AccountCover, AuthButton } from "../../components";
+import { AccountBackground, AccountContainer, AccountCover, AuthButton, Title } from "../../components";
 
 export const AccountScreen = () => {
   const navigation = useNavigation<StackNavigationProp<ParamListBase>>();
@@ -10,6 +10,7 @@ export const AccountScreen = () => {
   return (
     <AccountBackground>
       <AccountCover />
+      <Title>Meals To Go</Title>
       <AccountContainer>
         <AuthButton icon="lock-open-outline" mode="contained" onPress={() => navigation.navigate("Login")}>
           Login
