@@ -1,7 +1,7 @@
 import { Text } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
 import { BottomTabNavigationOptions, createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import { NavigationContainer, ParamListBase, RouteProp } from "@react-navigation/native";
+import { ParamListBase, RouteProp } from "@react-navigation/native";
 
 import { SafeArea } from "../../components";
 import { MapScreen } from "../../features";
@@ -33,11 +33,9 @@ const screenOptions: (props: { route: RouteProp<ParamListBase, string> }) => Bot
 };
 
 export const AppNavigator = () => (
-  <NavigationContainer>
-    <Tab.Navigator screenOptions={screenOptions}>
-      <Tab.Screen name="Restaurants" component={RestaurantsNavigator} />
-      <Tab.Screen name="Map" component={MapScreen} />
-      <Tab.Screen name="Settings" component={Settings} />
-    </Tab.Navigator>
-  </NavigationContainer>
+  <Tab.Navigator screenOptions={screenOptions}>
+    <Tab.Screen name="Restaurants" component={RestaurantsNavigator} />
+    <Tab.Screen name="Map" component={MapScreen} />
+    <Tab.Screen name="Settings" component={Settings} />
+  </Tab.Navigator>
 );
