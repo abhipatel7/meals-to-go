@@ -8,6 +8,6 @@ import { AppNavigator } from "./app-navigator";
 
 export const Navigation = () => {
   const { isAuthenticated } = useContext(AuthenticationContext);
-  console.log(isAuthenticated);
+
   return <NavigationContainer>{isAuthenticated ? <AppNavigator /> : <AccountNavigator />}</NavigationContainer>;
 };

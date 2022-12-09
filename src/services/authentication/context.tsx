@@ -30,7 +30,7 @@ export const AuthenticationContext = createContext<AuthContextType>({
 export const AuthenticationContextProvider = ({ children }: Props) => {
   const [isLoading, setIsLoading] = useState(false);
   const [user, setUser] = useState<User | UserCredential>();
-  const [error, setError] = useState<any>(null);
+  const [error, setError] = useState("");
   const auth = useRef(getAuth()).current;
 
   onAuthStateChanged(auth, (u) => {
