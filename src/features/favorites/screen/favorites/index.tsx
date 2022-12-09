@@ -1,5 +1,7 @@
-import React, { useContext } from "react";
+import { useContext } from "react";
 import { TouchableOpacity } from "react-native";
+import { ParamListBase, useNavigation } from "@react-navigation/native";
+import { StackNavigationProp } from "@react-navigation/stack";
 
 import { SafeArea, Spacer, Text } from "../../../../components";
 import { FavoritesContext } from "../../../../services";
@@ -8,8 +10,10 @@ import { RestaurantList } from "../../../restaurants/screens/restaurant/styles";
 
 import { NoFavoritesArea } from "./styles";
 
-export const FavoritesScreen = ({ navigation }) => {
+export const FavoritesScreen = () => {
   const { favorites } = useContext(FavoritesContext);
+
+  const navigation = useNavigation<StackNavigationProp<ParamListBase>>();
 
   return favorites.length ? (
     <SafeArea>

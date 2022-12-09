@@ -1,4 +1,3 @@
-import React from "react";
 import { ParamListBase, useNavigation } from "@react-navigation/native";
 import { StackNavigationProp } from "@react-navigation/stack";
 import LottieView from "lottie-react-native";

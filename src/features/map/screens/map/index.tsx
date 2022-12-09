@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { useEffect } from "react";
 import { useContext } from "react";
 import { Callout, Marker } from "react-native-maps";

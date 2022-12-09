@@ -4,7 +4,7 @@ import { Colors } from "react-native-paper";
 import { ParamListBase, useNavigation } from "@react-navigation/native";
 import { StackNavigationProp } from "@react-navigation/stack";
 
-import { FavoritesBar, SafeArea, Spacer } from "../../../../components";
+import { FadeInView, FavoritesBar, SafeArea, Spacer } from "../../../../components";
 import { FavoritesContext, RestaurantsContext } from "../../../../services";
 import { Card as RestaurantCard, Search } from "../../components";
 
@@ -34,7 +34,9 @@ export const RestaurantsScreen = () => {
           return (
             <TouchableOpacity onPress={() => navigation.navigate("RestaurantDetail", { restaurant })}>
               <Spacer position="bottom" size="large">
-                <RestaurantCard restaurant={restaurant} />
+                <FadeInView>
+                  <RestaurantCard restaurant={restaurant} />
+                </FadeInView>
               </Spacer>
             </TouchableOpacity>
           );

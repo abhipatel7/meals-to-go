@@ -1,4 +1,3 @@
-import React from "react";
 import { Image as RNImage } from "react-native";
 import WebView from "react-native-webview";
 import * as Device from "expo-device";
