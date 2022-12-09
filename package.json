@@ -10,7 +10,9 @@
     "lint:fix": "eslint --ext js,ts,tsx . --cache --report-unused-disable-directives --max-warnings=0 --fix",
     "format": "prettier --write . --config ./.prettierrc",
     "prepare": "husky install",
-    "publish-app": "eas update"
+    "update": "eas update",
+    "build-android": "eas build --platform android",
+    "build-ios": "eas build --platform ios"
   },
   "dependencies": {
     "@expo-google-fonts/inter": "^0.2.2",

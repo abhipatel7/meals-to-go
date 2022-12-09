@@ -20,13 +20,15 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.abhipatel7420.mealstogo"
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/icon.jpg",
         "backgroundColor": "#FFFFFF"
-      }
+      },
+      "package": "com.abhipatel7420.mealstogo"
     },
     "extra": {
       "eas": {
