@@ -8,7 +8,6 @@ import { ThemeProvider } from "styled-components/native";
 import "react-native-gesture-handler";
 
 import { Navigation, theme } from "./src/infrastructure";
-import { FavoritesContextProvider, LocationContextProvider, RestaurantsContextProvider } from "./src/services";
 import { AuthenticationContextProvider } from "./src/services/authentication";
 
 // Initialize Firebase
@@ -44,13 +43,7 @@ const App = () => {
     <>
       <ThemeProvider theme={theme}>
         <AuthenticationContextProvider>
-          <FavoritesContextProvider>
-            <LocationContextProvider>
-              <RestaurantsContextProvider>
-                <Navigation />
-              </RestaurantsContextProvider>
-            </LocationContextProvider>
-          </FavoritesContextProvider>
+          <Navigation />
         </AuthenticationContextProvider>
       </ThemeProvider>
       <ExpoStatusBar style="auto" />

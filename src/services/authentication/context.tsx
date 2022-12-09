@@ -75,7 +75,7 @@ export const AuthenticationContextProvider = ({ children }: Props) => {
   const onLogout = () => {
     signOut(auth).then(() => {
       setUser(undefined);
-      setError(null);
+      setError("");
     });
   };
 
