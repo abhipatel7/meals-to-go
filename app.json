@@ -4,7 +4,7 @@
     "slug": "meals-to-go",
     "version": "0.0.1",
     "orientation": "portrait",
-    "icon": "./assets/images/icon.jpg",
+    "icon": "./assets/images/icon.png",
     "backgroundColor": "#ffffff",
     "userInterfaceStyle": "light",
     "splash": {
@@ -16,16 +16,14 @@
       "fallbackToCacheTimeout": 0,
       "url": "https://u.expo.dev/66acc6a8-a494-47e4-8b93-1d639fd8836a"
     },
-    "assetBundlePatterns": [
-      "**/*"
-    ],
+    "assetBundlePatterns": ["**/*"],
     "ios": {
       "supportsTablet": true,
       "bundleIdentifier": "com.abhipatel7420.mealstogo"
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/images/icon.jpg",
+        "foregroundImage": "./assets/images/icon.png",
         "backgroundColor": "#FFFFFF"
       },
       "package": "com.abhipatel7420.mealstogo"
