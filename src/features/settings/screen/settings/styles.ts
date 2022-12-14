@@ -12,3 +12,7 @@ export const AvatarContainer = styled.View`
 export const AvatarIcon = styled(Avatar.Icon)`
   background-color: ${({ theme: { colors } }) => colors.brand.primary};
 `;
+
+export const AvatarImage = styled(Avatar.Image)`
+  background-color: ${({ theme: { colors } }) => colors.brand.primary};
+`;
